@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kelola Ekskul</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="../assets/css/admin.css">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h2>Admin Panel</h2>
+            <small>Management System</small>
+        </div>
+
+    </div>
+
+    <p class="menu-title">ADMIN MENU</p>
+
+    <ul class="menu">
+
+        <li onclick="location.href='dashboard-admin.html'">
+            <i class="fa-solid fa-chart-pie"></i>
+            Dashboard
+        </li>
+
+        <li onclick="location.href='kelola-siswa.html'">
+            <i class="fa-solid fa-users"></i>
+            Kelola Siswa
+        </li>
+
+        <li class="active">
+            <i class="fa-solid fa-medal"></i>
+            Kelola Ekskul
+        </li>
+
+
+        <li onclick="location.href='laporan.html'">
+            <i class="fa-solid fa-chart-column"></i>
+            Laporan
+        </li>
+
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+<div class="topbar">
+
+    <div>
+        <h1>Kelola Ekskul</h1>
+
+        <p>
+            Tambah, edit, dan kelola
+            ekstrakurikuler sekolah
+        </p>
+    </div>
+
+    <button class="hero-btn"
+    onclick="scrollToForm()">
+
+        <i class="fa-solid fa-plus"></i>
+        Tambah Ekskul
+
+    </button>
+
+</div>
+
+<!-- ================= FORM ================= -->
+<div class="card glass dashboard-card"
+id="formEkskul">
+
+    <div class="section-title">
+
+        <div>
+            <h3>Form Ekskul</h3>
+            <span>CRUD System</span>
+        </div>
+
+    </div>
+
+    <div class="ekskul-form">
+
+        <!-- NAMA -->
+        <input
+        type="text"
+        id="namaEkskul"
+        placeholder="Nama Ekskul">
+
+        <!-- PEMBINA -->
+        <input
+        type="text"
+        id="pembinaEkskul"
+        placeholder="Nama Pembina">
+
+        <!-- JADWAL -->
+        <input
+        type="text"
+        id="jadwalEkskul"
+        placeholder="Jadwal Ekskul">
+
+        <!-- LOKASI -->
+        <input
+        type="text"
+        id="lokasiEkskul"
+        placeholder="Lokasi Ekskul">
+
+        <!-- DESKRIPSI -->
+        <textarea
+        id="deskripsiEkskul"
+        placeholder="Deskripsi Ekskul"></textarea>
+
+        <!-- KATEGORI -->
+<select id="kategoriEkskul"
+class="modern-select">
+
+    <option value="Kreatif">
+        🎨 Kreatif
+    </option>
+
+    <option value="Teknologi">
+        💻 Teknologi
+    </option>
+
+    <option value="Olahraga">
+        ⚽ Olahraga
+    </option>
+
+    <option value="Sosial">
+        🤝 Sosial
+    </option>
+
+    <option value="Akademik">
+        📚 Akademik
+    </option>
+
+</select>
+
+        <!-- PREVIEW IMAGE -->
+        <div class="preview-box"
+        id="previewBox">
+
+            <img id="previewImage"
+            src="https://via.placeholder.com/400x220?text=Preview+Gambar">
+
+        </div>
+
+
+<!-- PRESTASI -->
+<input
+type="text"
+id="prestasiEkskul"
+placeholder="Prestasi Ekskul">
+
+<!-- GALERI -->
+<input
+type="file"
+id="galeriEkskul"
+accept="image/*"
+multiple>
+
+
+
+        <!-- UPLOAD -->
+        <input
+        type="file"
+        id="gambarEkskul"
+        accept="image/*">
+
+        <!-- BUTTON -->
+        <button class="hero-btn"
+        onclick="tambahEkskul()">
+
+            <i class="fa-solid fa-plus"></i>
+            Simpan Ekskul
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= LIST EKSKUL ================= -->
+<div class="card glass dashboard-card">
+
+    <div class="section-title">
+
+        <div>
+            <h3>Daftar Ekskul</h3>
+            <span>Management System</span>
+        </div>
+
+        <div class="search-box glass">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+            type="text"
+            id="searchEkskul"
+            placeholder="Cari ekskul..."
+            onkeyup="searchEkskul()">
+
+        </div>
+
+    </div>
+
+    <!-- GRID -->
+    <div id="listEkskul"
+    class="admin-ekskul-grid">
+
+    </div>
+
+</div>
+
+</main>
+
+</section>
+
+
+<!-- ================= JS ================= -->
+<script src="../assets/js/script.js"></script>
+
+<script src="../assets/js/admin-ekskul.js"></script>
+
+<script>
+checkLogin();
+</script>
+
+</body>
+</html>
+
+
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kelola Quiz</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="../assets/css/admin.css">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h2>Admin Panel</h2>
+            <small>Management System</small>
+        </div>
+
+    </div>
+
+    <p class="menu-title">ADMIN MENU</p>
+
+    <ul class="menu">
+
+        <li onclick="location.href='dashboard-admin.html'">
+            <i class="fa-solid fa-chart-pie"></i>
+            Dashboard
+        </li>
+
+        <li onclick="location.href='kelola-siswa.html'">
+            <i class="fa-solid fa-users"></i>
+            Kelola Siswa
+        </li>
+
+        <li onclick="location.href='kelola-ekskul.html'">
+            <i class="fa-solid fa-medal"></i>
+            Kelola Ekskul
+        </li>
+
+        <li class="active">
+            <i class="fa-solid fa-file-lines"></i>
+            Kelola Quiz
+        </li>
+
+        <li onclick="location.href='laporan.html'">
+            <i class="fa-solid fa-chart-column"></i>
+            Laporan
+        </li>
+
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+<div class="topbar">
+
+    <div>
+        <h1>Kelola Quiz</h1>
+
+        <p>
+            Tambah dan kelola soal
+            pemetaan minat siswa
+        </p>
+    </div>
+
+</div>
+
+<!-- ================= FORM ================= -->
+<div class="card glass dashboard-card">
+
+    <div class="section-title">
+        <h3>Tambah Soal Quiz</h3>
+        <span>Quiz Management</span>
+    </div>
+
+    <div class="ekskul-form">
+
+        <!-- SOAL -->
+        <textarea
+        id="soalQuiz"
+        placeholder="Masukkan pertanyaan quiz..."></textarea>
+
+        <!-- KATEGORI -->
+        <select id="kategoriQuiz"
+        class="modern-select">
+
+            <option value="Kreatif">
+                🎨 Kreatif
+            </option>
+
+            <option value="Sosial">
+                🤝 Sosial
+            </option>
+
+            <option value="Teknologi">
+                💻 Teknologi
+            </option>
+
+            <option value="Kepemimpinan">
+                👑 Kepemimpinan
+            </option>
+
+            <option value="Olahraga">
+                ⚽ Olahraga
+            </option>
+
+            <option value="Akademik">
+                📚 Akademik
+            </option>
+
+        </select>
+
+        <!-- BUTTON -->
+        <button class="hero-btn"
+        onclick="tambahQuiz()">
+
+            <i class="fa-solid fa-plus"></i>
+            Tambah Soal
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= LIST SOAL ================= -->
+<div class="card glass dashboard-card">
+
+    <div class="section-title">
+        <h3>Daftar Soal Quiz</h3>
+        <span>Realtime Data</span>
+    </div>
+
+    <div id="quizList"
+    class="quiz-admin-grid">
+
+    </div>
+
+</div>
+
+</main>
+
+</section>
+
+<!-- JS -->
+<script src="../assets/js/script.js"></script>
+
+<script src="../assets/js/admin-quiz.js"></script>
+
+<script>
+checkLogin();
+</script>
+
+</body>
+</html>
+
