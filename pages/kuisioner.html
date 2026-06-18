@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kuisioner Minat</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/quiz.css">
+
+</head>
+
+<body>
+
+<div class="quiz-page">
+
+    <!-- =========================================================
+         LEFT SIDE
+    ========================================================= -->
+
+    <div class="quiz-side glass">
+
+        <!-- BACK -->
+        <button class="back-btn"
+        onclick="history.back()">
+
+            <i class="fa-solid fa-arrow-left"></i>
+            Kembali
+
+        </button>
+
+        <!-- LOGO -->
+        <div class="quiz-logo">
+
+            <i class="fa-solid fa-brain"></i>
+
+        </div>
+
+        <!-- TEXT -->
+        <div class="quiz-side-content">
+
+            <span class="quiz-badge">
+                Smart Recommendation
+            </span>
+
+            <h1>
+                Kuisioner Minat
+            </h1>
+
+            <p>
+                Jawab pertanyaan sesuai minat,
+                kebiasaan, dan kemampuan kamu.
+                Sistem akan memberikan rekomendasi
+                ekstrakurikuler terbaik secara otomatis.
+            </p>
+
+        </div>
+
+        <!-- INFO -->
+        <div class="quiz-info">
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+
+                    <h4>5 - 10 Menit</h4>
+
+                    <small>
+                        Durasi pengerjaan
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <div>
+
+                    <h4>18 Pertanyaan</h4>
+
+                    <small>
+                        Quiz interaktif
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+
+                <div>
+
+                    <h4>Hasil Otomatis</h4>
+
+                    <small>
+                        Rekomendasi realtime
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+         QUIZ CONTAINER
+    ========================================================= -->
+
+    <div class="quiz-container glass">
+
+        <!-- START SCREEN -->
+        <div id="startScreen"
+        class="start-screen">
+
+            <div class="start-top">
+
+                <div class="start-icon">
+                    🎯
+                </div>
+
+                <h2>
+                    Mulai Kuisioner
+                </h2>
+
+                <p>
+                    Klik tombol di bawah untuk
+                    memulai kuisioner minat siswa.
+                </p>
+
+            </div>
+
+            <!-- FEATURES -->
+            <div class="quiz-feature">
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <span>
+                        Cepat & Interaktif
+                    </span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                    <span>
+                        Analisis Minat
+                    </span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-medal"></i>
+
+                    <span>
+                        Rekomendasi Ekskul
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- BUTTON -->
+            <button class="start-btn"
+            onclick="startQuiz()">
+
+                <i class="fa-solid fa-play"></i>
+                Mulai Sekarang
+
+            </button>
+
+        </div>
+
+        <!-- =========================================================
+             QUIZ SCREEN
+        ========================================================= -->
+
+        <div id="quizScreen"
+        style="display:none;">
+
+            <!-- HEADER -->
+            <div class="quiz-header">
+
+                <div>
+
+                    <small>
+                        Pertanyaan
+                    </small>
+
+                    <h3 id="questionNumber">
+                        1 / 18
+                    </h3>
+
+                </div>
+
+                <div class="progress-text">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Progress Quiz
+
+                </div>
+
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="progress-bar">
+
+                <div class="progress-fill"
+                id="progressFill">
+
+                </div>
+
+            </div>
+
+            <!-- QUESTION -->
+            <div class="question-card">
+
+                <span class="question-badge">
+
+                    🎯 Minat Siswa
+
+                </span>
+
+                <h2 id="questionText">
+
+                    Pertanyaan muncul di sini
+
+                </h2>
+
+            </div>
+
+            <!-- OPTIONS -->
+            <div class="options">
+
+                <button class="option-btn"
+                onclick="answer(5)">
+
+                    <div class="option-left">
+
+                        <span class="emoji">
+                            😍
+                        </span>
+
+                        <span>
+                            Sangat Setuju
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+                <button class="option-btn"
+                onclick="answer(4)">
+
+                    <div class="option-left">
+
+                        <span class="emoji">
+                            😊
+                        </span>
+
+                        <span>
+                            Setuju
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+                <button class="option-btn"
+                onclick="answer(3)">
+
+                    <div class="option-left">
+
+                        <span class="emoji">
+                            😐
+                        </span>
+
+                        <span>
+                            Netral
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+                <button class="option-btn"
+                onclick="answer(2)">
+
+                    <div class="option-left">
+
+                        <span class="emoji">
+                            😕
+                        </span>
+
+                        <span>
+                            Tidak Setuju
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+                <button class="option-btn"
+                onclick="answer(1)">
+
+                    <div class="option-left">
+
+                        <span class="emoji">
+                            😣
+                        </span>
+
+                        <span>
+                            Sangat Tidak Setuju
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="../assets/js/quiz.js"></script>
+
+</body>
+</html>

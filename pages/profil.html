@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Profil Siswa</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+
+<link rel="stylesheet"
+href="../assets/css/profile.css">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- =====================================================
+   SIDEBAR
+===================================================== -->
+<aside class="sidebar glass">
+
+    <!-- BRAND -->
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-school"></i>
+        </div>
+
+        <div>
+            <h2>SMPN 1</h2>
+            <small>Smart School</small>
+        </div>
+
+    </div>
+
+    <!-- MENU -->
+    <p class="menu-title">
+        MENU SISWA
+    </p>
+
+    <ul class="menu">
+
+        <li onclick="location.href='dashboard.html'">
+
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+
+        </li>
+
+        <li onclick="location.href='kuisioner.html'">
+
+            <i class="fa-solid fa-file-lines"></i>
+            Kuisioner
+
+        </li>
+
+        <li onclick="location.href='hasil.html'">
+
+            <i class="fa-solid fa-chart-pie"></i>
+            Hasil Minat
+
+        </li>
+
+        <li onclick="location.href='ekskul.html'">
+
+            <i class="fa-solid fa-medal"></i>
+            Ekstrakurikuler
+
+        </li>
+
+        <li class="active">
+
+            <i class="fa-solid fa-user"></i>
+            Profil
+
+        </li>
+
+        <li onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- =====================================================
+   MAIN
+===================================================== -->
+<main class="main">
+
+<!-- HEADER -->
+<div class="profile-header glass">
+
+    <div class="profile-photo">
+
+        <img
+        id="profilePreview"
+        src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png">
+
+        <button
+        class="edit-photo-btn"
+        onclick="document.getElementById('uploadPhoto').click()">
+
+            <i class="fa-solid fa-camera"></i>
+
+        </button>
+
+        <input
+        type="file"
+        id="uploadPhoto"
+        accept="image/*"
+        hidden>
+
+    </div>
+
+    <h2 id="profileName">Nama Siswa</h2>
+
+    <p id="kelasSiswa">
+        Kelas VIII A
+    </p>
+
+</div>
+
+<!-- STATS -->
+<div class="profile-stats">
+
+    <div class="stat-card glass">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <h3 id="minatSiswa">
+            -
+        </h3>
+
+        <p>Minat Dominan</p>
+
+    </div>
+
+    <div class="stat-card glass">
+
+        <i class="fa-solid fa-medal"></i>
+
+        <h3 id="jumlahEkskul">
+            0
+        </h3>
+
+        <p>Ekskul Diikuti</p>
+
+    </div>
+
+    <div class="stat-card glass">
+
+        <i class="fa-solid fa-user-check"></i>
+
+        <h3>Aktif</h3>
+
+        <p>Status</p>
+
+    </div>
+
+</div>
+
+<!-- GRID -->
+<div class="profile-grid">
+
+    <!-- DATA DIRI -->
+    <div class="profile-card glass">
+
+        <h3>
+            <i class="fa-solid fa-user"></i>
+            Data Diri
+        </h3>
+
+        <div class="info-item">
+
+            <span>Nama</span>
+
+            <strong id="namaSiswa">
+                -
+            </strong>
+
+        </div>
+
+        <div class="info-item">
+
+            <span>Kelas</span>
+
+            <strong id="kelasData">
+                -
+            </strong>
+
+        </div>
+
+        <div class="info-item">
+
+            <span>Username</span>
+
+            <strong id="usernameSiswa">
+                -
+            </strong>
+
+        </div>
+
+        <div class="info-item">
+
+            <span>Status</span>
+
+            <strong>
+                Aktif
+            </strong>
+
+        </div>
+
+    </div>
+
+    <!-- EKSKUL -->
+    <div class="profile-card glass">
+
+        <h3>
+            <i class="fa-solid fa-medal"></i>
+            Ekskul Diikuti
+        </h3>
+
+        <div id="joinedEkskulList">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- AKTIVITAS -->
+<div class="profile-card glass activity-card">
+
+    <h3>
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        Aktivitas Terbaru
+    </h3>
+
+    <div id="activityList">
+
+        <div class="activity-item">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            <span>
+                Mengisi Kuisioner Minat
+            </span>
+
+        </div>
+
+        <div class="activity-item">
+
+            <i class="fa-solid fa-medal"></i>
+
+            <span>
+                Join Ekstrakurikuler
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+</section>
+
+<!-- JS -->
+<script src="../assets/js/script.js"></script>
+
+<script src="../assets/js/profile.js"></script>
+
+
+
+<script>
+
+checkLogin();
+loadUser();
+
+</script>
+
+</body>
+</html>

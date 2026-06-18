@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Laporan Admin</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="../assets/css/admin.css">
+
+<link rel="stylesheet"
+href="../assets/css/laporan.css">
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+
+            <h2>Admin Panel</h2>
+
+            <small>
+                Management System
+            </small>
+
+        </div>
+
+    </div>
+
+    <p class="menu-title">
+        ADMIN MENU
+    </p>
+
+    <ul class="menu">
+
+        <li onclick="location.href='dashboard-admin.html'">
+
+            <i class="fa-solid fa-chart-pie"></i>
+            Dashboard
+
+        </li>
+
+        <li onclick="location.href='kelola-siswa.html'">
+
+            <i class="fa-solid fa-users"></i>
+            Kelola Siswa
+
+        </li>
+
+        <li onclick="location.href='kelola-ekskul.html'">
+
+            <i class="fa-solid fa-medal"></i>
+            Kelola Ekskul
+
+        </li>
+
+        <li class="active">
+
+            <i class="fa-solid fa-chart-column"></i>
+            Laporan
+
+        </li>
+
+        <li onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+<!-- =========================================================
+     TOPBAR
+========================================================= -->
+
+<div class="topbar laporan-topbar">
+
+    <div>
+
+        <h1>Laporan Sistem</h1>
+
+        <p>
+            Monitoring data siswa, hasil minat,
+            dan aktivitas ekstrakurikuler
+        </p>
+
+    </div>
+
+    <div class="topbar-badge">
+
+        <i class="fa-solid fa-chart-line"></i>
+        Realtime Data
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<div class="stats modern-stats">
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+
+            <h2 id="totalSiswa">0</h2>
+
+            <p>Total Siswa</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon purple">
+            <i class="fa-solid fa-medal"></i>
+        </div>
+
+        <div>
+
+            <h2 id="totalEkskul">0</h2>
+
+            <p>Total Ekskul</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon green">
+            <i class="fa-solid fa-user-check"></i>
+        </div>
+
+        <div>
+
+            <h2 id="siswaAktif">0</h2>
+
+            <p>Siswa Aktif</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon orange">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+
+        <div>
+
+            <h2 id="totalMinat">0</h2>
+
+            <p>Sudah Quiz</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     TABLE CARD
+========================================================= -->
+
+<div class="card glass laporan-main-card">
+
+    <!-- HEADER -->
+    <div class="laporan-header">
+
+        <div>
+
+            <h2>Data Siswa & Join Ekskul</h2>
+
+            <p>
+                Seluruh data siswa dan aktivitas
+                ekstrakurikuler dalam sistem
+            </p>
+
+        </div>
+
+        <!-- ACTION -->
+        <div class="laporan-action">
+
+            <button class="export-btn pdf-btn"
+            onclick="downloadPDF()">
+
+                <i class="fa-solid fa-file-pdf"></i>
+                PDF
+
+            </button>
+
+            <button class="export-btn excel-btn"
+            onclick="downloadExcel()">
+
+                <i class="fa-solid fa-file-excel"></i>
+                Excel
+
+            </button>
+
+            <button class="export-btn print-btn"
+            onclick="window.print()">
+
+                <i class="fa-solid fa-print"></i>
+                Print
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- SEARCH -->
+    <div class="laporan-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text"
+        id="searchInput"
+        placeholder="Cari nama siswa atau ekskul...">
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper">
+
+        <table class="modern-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Username</th>
+                    <th>Status</th>
+                    <th>Minat</th>
+                    <th>Ekskul Diikuti</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="laporanTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</main>
+
+</section>
+
+<!-- =========================================================
+     JS
+========================================================= -->
+
+<script src="../assets/js/script.js"></script>
+
+<!-- PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- EXCEL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script src="../assets/js/laporan.js"></script>
+
+</body>
+</html>
+

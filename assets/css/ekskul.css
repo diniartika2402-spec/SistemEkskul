@@ -1,0 +1,16 @@
+.loading-ekskul{
+
+    width:100%;
+    text-align:center;
+    padding:60px 20px;
+    color:#94a3b8;
+
+}
+
+.loading-ekskul i{
+
+    font-size:32px;
+    margin-bottom:15px;
+    display:block;
+
+}

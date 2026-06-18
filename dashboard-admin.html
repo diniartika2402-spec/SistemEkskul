@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="../assets/css/admin.css">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h2>Admin Panel</h2>
+            <small>Management System</small>
+        </div>
+
+    </div>
+
+    <p class="menu-title">ADMIN MENU</p>
+
+    <ul class="menu">
+
+        <li class="active">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </li>
+
+        <li onclick="window.location.href='kelola-siswa.html'">
+            <i class="fa-solid fa-users"></i>
+            <span>Kelola Siswa</span>
+        </li>
+
+        <li onclick="window.location.href='kelola-ekskul.html'">
+            <i class="fa-solid fa-medal"></i>
+            <span>Kelola Ekskul</span>
+        </li>
+
+
+        <li onclick="window.location.href='laporan.html'">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Laporan</span>
+        </li>
+
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+<!-- ================= HERO ================= -->
+<div class="hero-dashboard glass admin-hero">
+
+    <div class="hero-left">
+
+        <span class="hero-badge">
+            Admin Dashboard
+        </span>
+
+        <h1>
+            Selamat Datang, Admin 👋
+        </h1>
+
+        <p>
+            Kelola sistem pemetaan minat,
+            ekstrakurikuler, dan data siswa
+            dengan tampilan modern dan interaktif.
+        </p>
+
+        <button class="hero-btn"
+        onclick="window.location.href='kelola-ekskul.html'">
+
+            Kelola Sistem
+
+        </button>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2620/2620983.png">
+
+    </div>
+
+</div>
+
+<!-- ================= STATS ================= -->
+<div class="stats modern-stats">
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+            <h2>320</h2>
+            <p>Total Siswa</p>
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon purple">
+            <i class="fa-solid fa-medal"></i>
+        </div>
+
+        <div>
+            <h2>18</h2>
+            <p>Ekstrakurikuler</p>
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon green">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <div>
+            <h2>92%</h2>
+            <p>Partisipasi</p>
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon orange">
+            <i class="fa-solid fa-user-check"></i>
+        </div>
+
+        <div>
+            <h2>250</h2>
+            <p>Siswa Aktif</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+</main>
+
+</section>
+
+<script src="../assets/js/script.js"></script>
+
+<script>
+checkLogin();
+</script>
+
+</body>
+</html>
+

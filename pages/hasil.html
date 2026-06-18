@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Hasil Minat</title>
+
+<!-- FONT -->
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="../assets/css/hasil.css">
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-school"></i>
+        </div>
+
+        <div>
+
+            <h2>SMPN 1</h2>
+
+            <small>
+                Smart School
+            </small>
+
+        </div>
+
+    </div>
+
+    <ul class="menu">
+
+        <li onclick="location.href='dashboard.html'">
+
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+
+        </li>
+
+        <li onclick="location.href='kuisioner.html'">
+
+            <i class="fa-solid fa-file-lines"></i>
+            Kuisioner
+
+        </li>
+
+        <li class="active">
+
+            <i class="fa-solid fa-chart-pie"></i>
+            Hasil Minat
+
+        </li>
+
+        <li onclick="location.href='ekskul.html'">
+
+            <i class="fa-solid fa-medal"></i>
+            Ekstrakurikuler
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+<!-- =========================================================
+     HERO RESULT
+========================================================= -->
+
+<div class="hero-hasil glass">
+
+    <div class="hero-left">
+
+        <span class="hero-badge">
+            AI Interest Analysis
+        </span>
+
+        <h1 id="resultTitle">
+            Minat Kamu:
+            Kreatif 🎨
+        </h1>
+
+        <p id="resultDesc">
+
+            Kamu memiliki minat tinggi
+            pada bidang kreatif dan seni.
+
+        </p>
+
+        <div class="hero-tags">
+
+            <div class="hero-tag">
+                🎯 Analisis Real-time
+            </div>
+
+            <div class="hero-tag">
+                📊 Hasil Otomatis
+            </div>
+
+            <div class="hero-tag">
+                🏆 Rekomendasi Ekskul
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="score-circle">
+
+            <span id="resultScore">
+                90%
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<div class="stats modern-stats">
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+
+        <div>
+
+            <h2 id="topMinat">
+                Kreatif
+            </h2>
+
+            <p>Minat Utama</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon purple">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <div>
+
+            <h2 id="persentaseMinat">
+                90%
+            </h2>
+
+            <p>Persentase</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon green">
+            <i class="fa-solid fa-medal"></i>
+        </div>
+
+        <div>
+
+            <h2 id="jumlahEkskul">
+                4
+            </h2>
+
+            <p>Rekomendasi</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     REKOMENDASI EKSKUL
+========================================================= -->
+
+<div class="card glass dashboard-card">
+
+    <div class="section-title">
+
+        <h3>Rekomendasi Ekstrakurikuler</h3>
+
+        <span>Based on your interest</span>
+
+    </div>
+
+    <div id="hasilEkskul"
+    class="hasil-ekskul-grid">
+
+    </div>
+
+</div>
+
+<div id="detailResult"></div>
+
+<div class="ekskul-grid hasil-ekskul"></div>
+
+</main>
+
+</section>
+
+<!-- JS -->
+<script src="../assets/js/hasil.js"></script>
+
+</body>
+</html>

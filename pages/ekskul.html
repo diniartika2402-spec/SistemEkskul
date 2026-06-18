@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Ekstrakurikuler</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="../assets/css/ekskul.css">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-school"></i>
+        </div>
+
+        <div>
+            <h2>SMPN 1</h2>
+            <small>Smart School</small>
+        </div>
+
+    </div>
+
+    <p class="menu-title">MENU</p>
+
+    <ul class="menu">
+
+        <li onclick="location.href='dashboard.html'">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </li>
+
+        <li onclick="location.href='kuisioner.html'">
+            <i class="fa-solid fa-file-lines"></i>
+            Kuisioner
+        </li>
+
+        <li onclick="location.href='hasil.html'">
+            <i class="fa-solid fa-chart-pie"></i>
+            Hasil Minat
+        </li>
+
+        <li class="active">
+            <i class="fa-solid fa-medal"></i>
+            Ekstrakurikuler
+        </li>
+
+        <li onclick="location.href='profil.html'">
+            <i class="fa-solid fa-user"></i>
+            Profil
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+<!-- TOPBAR -->
+<div class="topbar">
+
+    <div>
+        <h1>Ekstrakurikuler</h1>
+
+        <p>
+            Pilih kegiatan sesuai minat dan bakatmu
+        </p>
+    </div>
+
+</div>
+
+<!-- ================= GRID EKSKUL ================= -->
+<div id="ekskulContainer"
+class="ekskul-grid">
+
+    <div class="loading-ekskul">
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        <p>Memuat data ekstrakurikuler...</p>
+
+    </div>
+
+</div>
+
+
+</main>
+
+</section>
+
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+
+    <div class="modal-content large-modal">
+
+        <!-- CLOSE -->
+        <button class="close-btn"
+        onclick="closeDetail()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <!-- HEADER IMAGE -->
+        <div class="modal-image">
+
+            <img id="modalImg" src="">
+
+            <div class="modal-overlay">
+
+                <h2 id="modalTitle"></h2>
+
+                <span class="modal-badge">
+                    Ekstrakurikuler Sekolah
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- BODY -->
+        <div class="modal-body">
+
+            <!-- DESKRIPSI -->
+            <div class="modal-section">
+
+                <h3>
+                    <i class="fa-solid fa-circle-info"></i>
+                    Deskripsi
+                </h3>
+
+                <p id="modalDesc"></p>
+
+            </div>
+
+            <!-- DETAIL -->
+            <div class="modal-section">
+
+                <h3>
+                    <i class="fa-solid fa-list"></i>
+                    Informasi Ekskul
+                </h3>
+
+                <div class="detail-list">
+
+                    <div class="detail-item">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="modalPembina"></span>
+                    </div>
+
+                    <div class="detail-item">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span id="modalJadwal"></span>
+                    </div>
+
+                    <div class="detail-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span id="modalLokasi"></span>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            
+<!-- ================= PRESTASI ================= -->
+<div class="modal-section">
+
+    <h3>
+        <i class="fa-solid fa-trophy"></i>
+        Prestasi Ekskul
+    </h3>
+
+    <div id="modalPrestasiContainer">
+
+    </div>
+
+</div>
+
+
+
+            
+            <!-- GALERI -->
+<div class="modal-section">
+
+    <h3>
+        <i class="fa-solid fa-image"></i>
+        Dokumentasi Kegiatan
+    </h3>
+
+    <div
+    class="gallery-grid"
+    id="modalGaleri">
+
+    </div>
+
+    <div class="join-wrapper">
+
+        <button
+        id="joinEkskulBtn"
+        class="join-btn">
+
+            <i class="fa-solid fa-plus"></i>
+            Join Ekskul
+
+        </button>
+
+    </div>
+
+</div>
+
+        </div> <!-- modal-body -->
+
+    </div> <!-- modal-content -->
+
+</div> <!-- modal -->
+
+
+<!-- JS -->
+<script src="../assets/js/ekskul.js"></script>
+
+</body>
+</html>
+

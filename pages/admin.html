@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link rel="stylesheet"
+href="../assets/css/dashboard.css">
+
+
+<link rel="stylesheet"
+href="../assets/css/admin.css">
+
+
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar glass">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h2>Admin Panel</h2>
+            <small>Management System</small>
+        </div>
+
+    </div>
+
+    <p class="menu-title">ADMIN MENU</p>
+
+    <ul class="menu">
+
+        <li class="active">
+            <i class="fa-solid fa-chart-pie"></i>
+            Dashboard
+        </li>
+
+        <li>
+            <i class="fa-solid fa-users"></i>
+            Data Siswa
+        </li>
+
+        <li>
+            <i class="fa-solid fa-medal"></i>
+            Kelola Ekskul
+        </li>
+
+        <li>
+            <i class="fa-solid fa-file-lines"></i>
+            Kelola Quiz
+        </li>
+
+        <li>
+            <i class="fa-solid fa-chart-column"></i>
+            Hasil Minat
+        </li>
+
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+<!-- ================= HERO ================= -->
+<div class="hero-dashboard glass admin-hero">
+
+    <div class="hero-left">
+
+        <span class="hero-badge">
+            Admin Dashboard
+        </span>
+
+        <h1>
+            Selamat Datang, Admin 👋
+        </h1>
+
+        <p>
+            Kelola sistem pemetaan minat,
+            ekstrakurikuler, dan data siswa
+            dengan mudah dan modern.
+        </p>
+
+        <button class="hero-btn">
+            Kelola Sistem
+        </button>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2620/2620983.png">
+
+    </div>
+
+</div>
+
+<!-- ================= STATS ================= -->
+<div class="stats modern-stats">
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+            <h2>320</h2>
+            <p>Total Siswa</p>
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon purple">
+            <i class="fa-solid fa-medal"></i>
+        </div>
+
+        <div>
+            <h2>18</h2>
+            <p>Ekstrakurikuler</p>
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon green">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <div>
+            <h2>92%</h2>
+            <p>Partisipasi</p>
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon orange">
+            <i class="fa-solid fa-user-check"></i>
+        </div>
+
+        <div>
+            <h2>250</h2>
+            <p>Siswa Aktif</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= GRID ================= -->
+<div class="dashboard-grid">
+
+    <!-- ================= QUICK ACTION ================= -->
+    <div class="card glass dashboard-card">
+
+        <div class="section-title">
+            <h3>Quick Action</h3>
+            <span>Admin Tools</span>
+        </div>
+
+        <div class="quick-grid">
+
+            <button class="quick-btn">
+                <i class="fa-solid fa-plus"></i>
+                Tambah Ekskul
+            </button>
+
+            <button class="quick-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Tambah Siswa
+            </button>
+
+            <button class="quick-btn">
+                <i class="fa-solid fa-pen"></i>
+                Edit Quiz
+            </button>
+
+            <button class="quick-btn">
+                <i class="fa-solid fa-chart-pie"></i>
+                Lihat Hasil
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= NOTIFIKASI ================= -->
+    <div class="card glass dashboard-card">
+
+        <div class="section-title">
+            <h3>Notifikasi Sistem</h3>
+            <span>Realtime</span>
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    📢
+                </div>
+
+                <div>
+                    <h4>Pendaftaran Basket meningkat</h4>
+                    <p>5 menit lalu</p>
+                </div>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    🏆
+                </div>
+
+                <div>
+                    <h4>Robotik lolos tingkat provinsi</h4>
+                    <p>Hari ini</p>
+                </div>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+                    <h4>10 siswa baru mendaftar</h4>
+                    <p>Kemarin</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= TABLE ================= -->
+    <div class="card glass dashboard-card wide-card">
+
+        <div class="section-title">
+            <h3>Data Siswa Terbaru</h3>
+            <span>Last Update</span>
+        </div>
+
+        <div class="table-wrapper">
+
+            <table class="modern-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Nama</th>
+                        <th>Kelas</th>
+                        <th>Minat</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Dini Artika</td>
+                        <td>VIII A</td>
+                        <td>Kreatif</td>
+                        <td>
+                            <span class="status active-status">
+                                Aktif
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Raka Saputra</td>
+                        <td>VIII B</td>
+                        <td>Teknologi</td>
+                        <td>
+                            <span class="status active-status">
+                                Aktif
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Nabila Putri</td>
+                        <td>IX A</td>
+                        <td>Sosial</td>
+                        <td>
+                            <span class="status pending-status">
+                                Pending
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+</section>
+
+<script src="../assets/js/script.js"></script>
+
+<script>
+checkLogin();
+</script>
+
+</body>
+</html>
+

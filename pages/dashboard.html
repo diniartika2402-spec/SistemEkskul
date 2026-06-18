@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - Sistem Pemetaan Minat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar glass">
+
+    <div class="brand">
+        <div class="brand-logo">
+            <i class="fa-solid fa-school"></i>
+        </div>
+
+        <div>
+            <h2>SMPN 1</h2>
+            <small>Smart School</small>
+        </div>
+    </div>
+
+    <p class="menu-title">MENU</p>
+
+    <ul class="menu">
+
+        <li class="active">
+            <i class="fa-solid fa-house"></i> Dashboard
+        </li>
+
+        <li onclick="location.href='kuisioner.html'">
+            <i class="fa-solid fa-file-lines"></i> Kuisioner
+        </li>
+
+        <li onclick="location.href='hasil.html'">
+            <i class="fa-solid fa-chart-pie"></i> Hasil Minat
+        </li>
+
+        <li onclick="location.href='ekskul.html'">
+            <i class="fa-solid fa-medal"></i> Ekstrakurikuler
+        </li>
+
+        <li onclick="location.href='profil.html'">
+            <i class="fa-solid fa-user"></i> Profil
+        </li>
+
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= HERO ================= -->
+<div class="hero-dashboard glass">
+
+    <div class="hero-left">
+
+        <span class="hero-badge">
+            Sistem Pemetaan Minat
+        </span>
+
+        <h1>
+            Halo,
+            <span id="userName"></span> 👋
+        </h1>
+
+        <p>
+            Temukan potensi terbaikmu melalui
+            rekomendasi ekstrakurikuler modern.
+        </p>
+
+        <button class="hero-btn"
+        onclick="location.href='kuisioner.html'">
+
+            Mulai Kuisioner
+
+        </button>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+    </div>
+
+</div>
+
+<!-- QUICK MENU -->
+
+<div class="quick-menu">
+
+    <div onclick="location.href='kuisioner.html'">
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        <span>Kuisioner</span>
+
+    </div>
+
+    <div onclick="location.href='hasil.html'">
+
+        <i class="fa-solid fa-chart-pie"></i>
+
+        <span>Hasil Minat</span>
+
+    </div>
+
+    <div onclick="location.href='ekskul.html'">
+
+        <i class="fa-solid fa-medal"></i>
+
+        <span>Ekskul</span>
+
+    </div>
+
+    <div onclick="location.href='profil.html'">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>Profil</span>
+
+    </div>
+
+</div>
+
+<!-- ================= STATS SISWA ================= -->
+
+<div class="stats modern-stats">
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon blue">
+            🎯
+        </div>
+
+        <div>
+
+            <h2 id="minatUtama">
+                -
+            </h2>
+
+            <p>Minat Utama</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon purple">
+            🏆
+        </div>
+
+        <div>
+
+            <h2 id="jumlahRekomendasi">
+                0
+            </h2>
+
+            <p>Rekomendasi Ekskul</p>
+
+        </div>
+
+    </div>
+
+    <div class="card glass stat-card modern-card">
+
+        <div class="stat-icon green">
+            📋
+        </div>
+
+        <div>
+
+            <h2 id="statusQuiz">
+                Belum
+            </h2>
+
+            <p>Status Kuisioner</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= CONTENT GRID ================= -->
+<div class="dashboard-grid">
+    <div class="card glass dashboard-card">
+
+    <div class="section-title">
+
+        <h3>
+            Hasil Minat Terakhir
+        </h3>
+
+    </div>
+
+    <div class="minat-result">
+
+        <div class="minat-icon">
+
+            🎨
+
+        </div>
+
+        <div>
+
+            <h2 id="dashboardMinat">
+
+                Belum Ada
+
+            </h2>
+
+            <p>
+
+                Kerjakan kuisioner untuk
+                mengetahui minatmu.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ================= MINAT ================= -->
+    <div class="card glass dashboard-card">
+
+        <div class="section-title">
+            <h3>Detail Minat</h3>
+            <span>Top Result</span>
+        </div>
+
+        <div class="progress-item">
+            <p>Kreatif</p>
+            <div class="progress">
+                <div style="width:87%"></div>
+            </div>
+        </div>
+
+        <div class="progress-item">
+            <p>Sosial</p>
+            <div class="progress">
+                <div style="width:72%"></div>
+            </div>
+        </div>
+
+        <div class="progress-item">
+            <p>Teknologi</p>
+            <div class="progress">
+                <div style="width:58%"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= REKOMENDASI ================= -->
+    <div class="card glass dashboard-card">
+
+        <div class="section-title">
+            <h3>Rekomendasi Ekskul</h3>
+            <span>AI Recommendation</span>
+        </div>
+
+        <div class="recommend-item">
+            🎨 Seni Rupa
+            <span>92%</span>
+        </div>
+
+        <div class="recommend-item">
+            📸 Fotografi
+            <span>85%</span>
+        </div>
+
+        <div class="recommend-item">
+            🎤 Paduan Suara
+            <span>78%</span>
+        </div>
+
+    </div>
+
+    <!-- ================= AKTIVITAS ================= -->
+    <div class="card glass dashboard-card wide-card">
+
+        <div class="section-title">
+            <h3>Aktivitas Terbaru</h3>
+            <span>Recent Activity</span>
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+                <div class="activity-icon">
+                    🎯
+                </div>
+
+                <div>
+                    <h4>Kuisioner selesai dikerjakan</h4>
+                    <p>2 menit yang lalu</p>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-icon">
+                    🏀
+                </div>
+
+                <div>
+                    <h4>Rekomendasi Basket muncul</h4>
+                    <p>Hari ini</p>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-icon">
+                    ⭐
+                </div>
+
+                <div>
+                    <h4>Minat Kreatif meningkat</h4>
+                    <p>Kemarin</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+
+
+</div>
+
+</main>
+
+</section>
+
+<script src="../assets/js/script.js"></script>
+
+<script>
+
+checkLogin();
+loadUser();
+
+const hasilMinat =
+localStorage.getItem("hasilMinat");
+
+if(hasilMinat){
+
+    const minat =
+    document.getElementById("dashboardMinat");
+
+    if(minat){
+
+        minat.innerText =
+        hasilMinat;
+
+    }
+
+    const minatUtama =
+    document.getElementById("minatUtama");
+
+    if(minatUtama){
+
+        minatUtama.innerText =
+        hasilMinat;
+
+    }
+
+    const statusQuiz =
+    document.getElementById("statusQuiz");
+
+    if(statusQuiz){
+
+        statusQuiz.innerText =
+        "Selesai";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
